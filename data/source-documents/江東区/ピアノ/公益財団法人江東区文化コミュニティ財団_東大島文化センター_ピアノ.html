@@ -1,0 +1,852 @@
+<!-- prwca1000.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="ja">
+<head>
+
+
+
+
+
+
+
+
+
+<script language="JavaScript" src="js/paw_doaction.js"></script>
+<script language="JavaScript" src="js/paw_common.js"></script>
+<script language="JavaScript" src="js/paw_errormsg.js"></script>
+<script language="JavaScript" src="js/prwca1000.js"></script>
+<script language="JavaScript">
+<!--
+	
+
+	
+	var gRsvWInstSrchVacantSelectionAction =
+				'/web/rsvWInstSrchVacantSelectionAction.do';
+
+	
+	var gRsvWInstRsvFieldAction =
+				'/web/rsvWInstRsvFieldAction.do';
+
+	
+	var gRsvWTransInstSrchVacantAction =
+				'/web/rsvWInstSrchVacantAction.do';
+
+	
+	var gRsvWInstTempRsvApplyAction =
+				'/web/rsvWInstTempRsvApplyAction.do';
+
+	
+	var gRsvWUserAttestationPageMoveAction =
+				'/web/rsvWUserAttestationPageMoveAction.do';
+
+	
+	var gRsvWTransGuideAction =
+				'/web/rsvWTransGuideAction.do';
+
+	
+	var gRsvWInstSrchVacantBackAction =
+				'/web/rsvWInstSrchVacantBackAction.do';
+
+	
+	var gRsvWTransUserAttestationEndAction =
+				'/web/rsvWTransUserAttestationEndAction.do';
+
+	
+	var gRsvWInstSrchVacantStopApplyAction =
+				'/web/rsvWInstSrchVacantStopApplyAction.do';
+
+	
+	var gRsvWEquipSrchVacantAction =
+				'/web/rsvWEquipSrchVacantAction.do';
+
+	
+
+
+	
+	var gSelectBldNo = 2;
+	
+	var gSelectBldNumMax = 10;
+
+
+	
+	var gSrchSelectInstNo = 0;
+	
+	var gSrchSelectInstMax = 5;
+
+//-->
+</script>
+
+
+
+
+
+
+<!-- pawzz1000 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="expires" content="Sun, 10 Jan 1990 01:01:01 GMT">
+<title>公益財団法人江東区文化コミュニティ財団　施設予約・講座管理システム　施設空き状況画面時間帯貸し</title>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body bgcolor="#ffffff" text="#333333" link="#3366cc" vlink="#9966cc" alink="#ff3366" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"	onload="javaScript:msgHide();javaScript:errorMsg('', 0);startInitTimer()">
+<script language="JavaScript">
+<!--
+	loadMsgWrite(this.document);
+//-->
+</script>
+<center>
+	<table width="100%" bgcolor="#98fb98">
+	<tr>
+	<td colspan="2">
+	<b>
+	
+	公益財団法人江東区文化コミュニティ財団
+	</b>
+	&nbsp;
+
+	</td>
+	<td align="right" width="50%"> <font color="#006400">
+	
+	〔空き状況の検索結果（時間帯貸し)〕
+	</font></td>
+	</tr>
+	<tr>
+	<td valign="middle" width="4"><img src="image/lw_spc.gif" align="absmiddle" border="0" alt=""></td>
+	<td bgcolor="#f0fff0" >
+		<table width="100%" cellspacing="1" cellpadding="1">
+		<tr>
+		<td>
+
+		
+		施設の空き状況です。
+
+		</td>
+		</tr>
+		</table>
+	</td>
+	<td align="right" width="50%">
+
+		
+		<a href="javaScript:doAction((_dom == 3) ? document.layers['disp'].document.formdisp : document.formdisp, gRsvWInstSrchVacantBackAction);"><img src="image/bw_return.gif" alt="もどる" border="0"></a>
+		
+		<a href="javaScript:doAction((_dom == 3) ? document.layers['disp'].document.formdisp : document.formdisp, gRsvWTransUserAttestationEndAction);"><img src="image/bw_end.gif" alt="終了" border="0"></a>
+		
+		<a href="javaScript:doAction((_dom == 3) ? document.layers['disp'].document.formdisp : document.formdisp, gRsvWTransGuideAction);"><img src="image/bw_guide.gif" alt="案内" border="0"></a>
+	</tr>
+	<tr>
+	<td width="4"></td>
+	</tr>
+	</table>
+
+	<table align="left">
+	<tr>
+	
+	<td><img src="image/lw_rsvconditionset.gif" border="0" alt="検索条件設定"></td>
+	
+	<td><img src="image/lw_left.gif" border="0"></td>
+	
+	<td><img src="image/lw_rsvresultb.gif" border="0" alt="検索結果"></td>
+
+	</tr>
+	</table>
+
+	<br clear="left">
+	<br>
+
+
+<table width="100%">
+	<tr>
+		<td valign="top" nowrap colspan="5">
+			<table cellspacing="5" cellpadding="0" align="center">
+				<tr align="center">
+
+
+				<td nowrap colspan="4">
+
+					<a href="https://www.kcf.or.jp/higashiojima/shisetsu/ichiran/" target="_blank" >
+
+				<font size="+3"><b>
+				
+				東大島文化センター
+
+					</a>
+
+				
+				空き状況
+				</b></font>
+
+				</td>
+
+				</tr>
+		
+
+		
+				<tr>
+
+
+
+
+						
+
+
+
+						<td align="right"><font size="+1">
+						
+						江東区文化センター
+						</font>
+						</td>
+
+
+
+						
+
+						
+
+
+
+
+						
+						<td width="99">
+							<a href="javaScript:doTransInstSrchVacantTzoneAction((_dom == 3) ? document.layers['disp'].document.formWTransInstSrchVacantTzoneAction : document.formWTransInstSrchVacantTzoneAction, gRsvWTransInstSrchVacantAction, 5, gSelectBldNo, gSelectBldNumMax, gSrchSelectInstNo);"><img src="image/bw_beforebcd.gif" alt="前の館" border="0"></a>
+						</td>
+
+						
+						<td width="99">
+							<a href="javaScript:doTransInstSrchVacantTzoneAction((_dom == 3) ? document.layers['disp'].document.formWTransInstSrchVacantTzoneAction : document.formWTransInstSrchVacantTzoneAction, gRsvWTransInstSrchVacantAction, 6, gSelectBldNo, gSelectBldNumMax, gSrchSelectInstNo);"><img src="image/bw_nextbcd.gif" alt="次の館" border="0"></a>
+						</td>
+
+						<td>
+							<font size="+1">
+							
+							豊洲文化センター
+
+
+							
+
+
+							</font>
+						</td>
+
+					</td>
+				</tr>
+
+
+
+			</table>
+		</td>
+	</tr>
+	<caption>
+	<tr>
+		<td></td>
+		
+		<td colspan="2">
+
+		
+
+		
+
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+
+
+			
+
+			<br>
+			
+
+
+		<td align="center">
+			<table border="0">
+				<tr>
+
+					<td>
+			
+			<a href="javaScript:doTransInstSrchVacantTzoneAction((_dom == 3) ? document.layers['disp'].document.formWTransInstSrchVacantTzoneAction : document.formWTransInstSrchVacantTzoneAction, gRsvWTransInstSrchVacantAction, 1, gSrchSelectInstNo, gSrchSelectInstMax);"><img src="image/bw_beforemonth2.gif" alt="前の月" align="middle" border="0"></a>
+					</td>
+
+
+					<td>
+			
+			<a href="javaScript:doTransInstSrchVacantTzoneAction((_dom == 3) ? document.layers['disp'].document.formWTransInstSrchVacantTzoneAction : document.formWTransInstSrchVacantTzoneAction, gRsvWTransInstSrchVacantAction, 3, gSrchSelectInstNo, gSrchSelectInstMax);"><img src="image/bw_prevweeks.gif" alt="前の週" align="center" border="0"></a>
+					</td>
+
+					<td>
+			
+			<a href="javaScript:doTransInstSrchVacantTzoneAction((_dom == 3) ? document.layers['disp'].document.formWTransInstSrchVacantTzoneAction : document.formWTransInstSrchVacantTzoneAction, gRsvWTransInstSrchVacantAction, 12, gSelectBldNo, gSelectBldNumMax, gSrchSelectInstNo);"><img src="image/bw_beforeday.gif" alt="前日" align="middle" border="0"></a>
+					</td>
+
+					<td>
+			
+			<a href="javaScript:doTransInstSrchVacantTzoneAction((_dom == 3) ? document.layers['disp'].document.formWTransInstSrchVacantTzoneAction : document.formWTransInstSrchVacantTzoneAction, gRsvWTransInstSrchVacantAction, 13, gSelectBldNo, gSelectBldNumMax, gSrchSelectInstNo);"><img src="image/bw_nextday.gif" alt="翌日" align="middle" border="0"></a>
+					</td>
+
+
+
+					<td>
+			
+			<a href="javaScript:doTransInstSrchVacantTzoneAction((_dom == 3) ? document.layers['disp'].document.formWTransInstSrchVacantTzoneAction : document.formWTransInstSrchVacantTzoneAction, gRsvWTransInstSrchVacantAction, 4, gSrchSelectInstNo, gSrchSelectInstMax);"><img src="image/bw_nextweeks.gif" alt="次の週" align="center" border="0"></a>
+					</td>
+
+					<td>
+			
+			<a href="javaScript:doTransInstSrchVacantTzoneAction((_dom == 3) ? document.layers['disp'].document.formWTransInstSrchVacantTzoneAction : document.formWTransInstSrchVacantTzoneAction, gRsvWTransInstSrchVacantAction, 2, gSrchSelectInstNo, gSrchSelectInstMax);"><img src="image/bw_nextmonth1.gif" alt="次の月" align="absmiddle" border="0"></a>
+					</td>
+
+				</tr>
+			</table>
+		</td>
+<!-- DS 2020/10/08 FS D.JANG 空き表示同一館全施設表示対応 -->
+<!-- 	<td valign="bottom" width="140"></td>			  -->
+<!-- DE 2020/10/08 FS D.JANG 空き表示同一館全施設表示対応 -->
+	</tr>
+	</caption>
+	<tr>
+		<td valign="top" nowrap>
+
+			<img src="image/lw_0.gif" align="absmiddle" alt="空き">&nbsp;
+			
+			空き
+			<br>
+
+		<img src="image/lw_100.gif" align="absmiddle" alt="予約あり">&nbsp;
+		
+		予約あり
+		<br>
+
+		<img src="image/lw_2.gif" align="absmiddle" alt="休館日">&nbsp;
+		
+		休館日
+		<br>
+		<img src="image/lw_1.gif" align="absmiddle" alt="保守日">&nbsp;
+		
+		保守日
+		<br>
+		<img src="image/lw_kikangais.gif" align="absmiddle" alt="受付期間外">&nbsp;
+		
+		期間外
+
+		<br>
+		<img src="image/lw_sound.gif" align="absmiddle" alt="音出予約">&nbsp;
+		
+		音出予約
+
+		</td>
+		<td valign="top" colspan="2">
+			<center>
+			<table border="2" cellpadding="5" bordercolorlight="1e90ff" bordercolordark="1e90ff" align="center">
+				<tr bgcolor="#98fb98" align="center">
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+<!-- 					<td align="center" width="99" nowrap> -->
+					<td align="center" nowrap>
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						
+						2026
+						
+						年
+
+						<br/>
+						
+
+						4月27日(月)
+
+
+					</td>
+
+
+
+
+
+
+
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+
+							<td bgcolor="#98fb98" width="198" colspan="2" align="center" nowrap>午前</td>
+
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+
+							<td bgcolor="#98fb98" width="198" colspan="2" align="center" nowrap>午後</td>
+
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+
+							<td bgcolor="#98fb98" width="198" colspan="2" align="center" nowrap>夜間</td>
+
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+				</tr>
+
+					<tr>
+						<td bgcolor="#E0FFFF" width="150" height="50" align="center">
+						
+						レクホール
+						</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="2">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_emptybs.gif" name="0_0_1020110" border="0" alt="空き">
+
+					</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="2">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_finishs.gif" name="0_1_1020110" border="0" alt="予約あり">
+
+					</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="2">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_finishs.gif" name="0_2_1020110" border="0" alt="予約あり">
+
+					</td>
+
+				</tr>
+
+					<tr>
+						<td bgcolor="#E0FFFF" width="150" height="50" align="center">
+						
+						ＡＶ・ホール
+						</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="2">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_finishs.gif" name="1_0_1020120" border="0" alt="予約あり">
+
+					</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="2">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_emptybs.gif" name="1_1_1020120" border="0" alt="空き">
+
+					</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="2">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_finishs.gif" name="1_2_1020120" border="0" alt="予約あり">
+
+					</td>
+
+				</tr>
+
+						<tr bgcolor="#98fb98" align="center">
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+<!-- 							<td align="center" width="99" nowrap> -->
+							<td align="center" nowrap>
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+								
+								2026
+								
+								年
+								<br/>
+								
+								4月27日(月)
+							</td>
+
+
+			<!-- DS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- 			<td bgcolor="#e0ffff" width="99" nowrap align="center">①</td> -->
+			<!-- DE 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- IS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示 -->
+							<td bgcolor="#98fb98" width="99" nowrap align="center">①</td>
+
+
+			<!-- DS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- 			<td bgcolor="#e0ffff" width="99" nowrap align="center">②</td> -->
+			<!-- DE 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- IS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示 -->
+							<td bgcolor="#98fb98" width="99" nowrap align="center">②</td>
+
+
+			<!-- DS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- 			<td bgcolor="#e0ffff" width="99" nowrap align="center">③</td> -->
+			<!-- DE 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- IS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示 -->
+							<td bgcolor="#98fb98" width="99" nowrap align="center">③</td>
+
+
+			<!-- DS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- 			<td bgcolor="#e0ffff" width="99" nowrap align="center">④</td> -->
+			<!-- DE 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- IS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示 -->
+							<td bgcolor="#98fb98" width="99" nowrap align="center">④</td>
+
+
+			<!-- DS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- 			<td bgcolor="#e0ffff" width="99" nowrap align="center">⑤</td> -->
+			<!-- DE 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- IS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示 -->
+							<td bgcolor="#98fb98" width="99" nowrap align="center">⑤</td>
+
+
+			<!-- DS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- 			<td bgcolor="#e0ffff" width="99" nowrap align="center">⑥</td> -->
+			<!-- DE 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示	  -->
+			<!-- IS 2020/10/09 FS D.JANG 江東区対応 空き表示同一館全施設表示 -->
+							<td bgcolor="#98fb98" width="99" nowrap align="center">⑥</td>
+
+
+						</tr>
+
+					<tr>
+						<td bgcolor="#E0FFFF" width="150" height="50" align="center">
+						
+						音楽スタジオ
+						</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="1">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_finishs.gif" name="2_0_1020240" border="0" alt="予約あり">
+
+					</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="1">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_finishs.gif" name="2_1_1020240" border="0" alt="予約あり">
+
+					</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="1">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_emptybs.gif" name="2_2_1020240" border="0" alt="空き">
+
+					</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="1">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_sound.gif" name="2_3_1020240" border="0" alt="">
+
+					</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="1">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_sound.gif" name="2_4_1020240" border="0" alt="">
+
+					</td>
+
+<!-- US 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+					<td nowrap align="center" colspan="1">
+<!-- UE 2020/10/07 FS N.So 江東区対応 空き状況複数施設表示対応 -->
+
+						<img src="image/lw_emptybs.gif" name="2_5_1020240" border="0" alt="空き">
+
+					</td>
+
+				</tr>
+
+
+
+
+
+
+
+			</table>
+			</center>
+		</td>
+		<td valign="bottom" width="140"></td>
+	</tr>
+</table>
+	</center>
+	<!-- paw_formdisp.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form name="formdisp" method="post">
+	<input type="hidden" name="displayNo" value="prwca1000">
+
+	<input type="hidden" name="stafFg" value="0">
+
+</form>
+
+
+	<!-- paw_winstsrchvacantselectionaction.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form name="formWInstSrchVacantSelectionAction" method="post">
+    <input type="hidden" name="displayNo" value="prwca1000">
+    <input type="hidden" name="selectItems" value="">
+</form>
+
+
+	<!-- paw_wtransinstsrchvacanttzoneaction_prkca1000.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form name="formWTransInstSrchVacantTzoneAction" method="post">
+    <input type="hidden" name="displayNo" value="prwca1000">
+    <input type="hidden" name="transVacantMode" value="">
+    <input type="hidden" name="srchSelectInstNo" value="">
+
+	<input type="hidden" name="selectBldNo" value="2">
+
+</form>
+
+
+	<!-- paw_winstTemprsvapplyaction.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form name="formWInstTempRsvApplyAction" method="post">
+    <input type="hidden" name="displayNo" value="prwca1000">
+    <input type="hidden" name="selectSize" value="0">
+    <input type="hidden" name="e410300" value="施設を選択して下さい。">
+</form>
+
+
+
+	<!-- prw_wtransinstsrchinstaction.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form name="formWTransInstSrchInstAction" method="post">
+	<input type="hidden" name="displayNo" value="prwca1000">
+	<input type="hidden" name="selectBldCd" value="0">
+
+	<input type="hidden" name="selectBldNo" value="2">
+
+</form>
+
+
+
+
+<script language="JavaScript">
+<!--
+	endTagWrite(this.document);
+//-->
+</script>
+<noscript>このページではJavaScriptを使用しています</noscript>
+
+	</body>
+</html>
+

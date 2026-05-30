@@ -1,0 +1,2162 @@
+[
+  {
+    "id": "shibuya-bunka-1",
+    "name": "渋谷区文化総合センター大和田 さくらホール",
+    "address": "東京都渋谷区桜丘町23-21",
+    "prefecture": "東京都",
+    "city": "渋谷区",
+    "ward": "渋谷区",
+    "station": "渋谷駅",
+    "stationWalkMinutes": 5,
+    "capacity": 200,
+    "price": 15000,
+    "priceNote": "区民料金あり（割引率は要確認）",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shibuya-bunka.jp/",
+    "officialUrl": "https://www.shibuya-bunka.jp/",
+    "description": "渋谷駅から徒歩5分の好立地。グランドピアノ完備の本格的なホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shibuya-bunka-2",
+    "name": "渋谷区文化総合センター大和田 伝承ホール",
+    "address": "東京都渋谷区桜丘町23-21",
+    "prefecture": "東京都",
+    "city": "渋谷区",
+    "ward": "渋谷区",
+    "station": "渋谷駅",
+    "stationWalkMinutes": 5,
+    "capacity": 100,
+    "price": 8000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shibuya-bunka.jp/",
+    "officialUrl": "https://www.shibuya-bunka.jp/",
+    "description": "小規模な発表会やリサイタルに適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shibuya-kumin-1",
+    "name": "渋谷区文化総合センター大和田 学習室1",
+    "address": "東京都渋谷区桜丘町23-21",
+    "prefecture": "東京都",
+    "city": "渋谷区",
+    "ward": "渋谷区",
+    "station": "渋谷駅",
+    "stationWalkMinutes": 5,
+    "capacity": 50,
+    "price": 5000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.shibuya-bunka.jp/",
+    "officialUrl": "https://www.shibuya-bunka.jp/",
+    "description": "少人数の練習や小規模な発表会に。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "setagaya-kumin-1",
+    "name": "世田谷区民会館ホール",
+    "address": "東京都世田谷区世田谷4-21-27",
+    "prefecture": "東京都",
+    "city": "世田谷区",
+    "ward": "世田谷区",
+    "station": "松陰神社前駅",
+    "stationWalkMinutes": 3,
+    "capacity": 300,
+    "price": 18000,
+    "priceNote": "区民は半額",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.city.setagaya.lg.jp/",
+    "officialUrl": "https://www.city.setagaya.lg.jp/",
+    "description": "世田谷区の中心的な文化施設。駐車場完備で車でのアクセスも便利。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "setagaya-seijo-1",
+    "name": "成城ホール",
+    "address": "東京都世田谷区成城6-2-1",
+    "prefecture": "東京都",
+    "city": "世田谷区",
+    "ward": "世田谷区",
+    "station": "成城学園前駅",
+    "stationWalkMinutes": 4,
+    "capacity": 200,
+    "price": 16000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.setagaya.lg.jp/",
+    "officialUrl": "https://www.city.setagaya.lg.jp/",
+    "description": "成城地区の文化拠点。落ち着いた雰囲気のホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "setagaya-kitazawa-1",
+    "name": "北沢タウンホール",
+    "address": "東京都世田谷区北沢2-8-18",
+    "prefecture": "東京都",
+    "city": "世田谷区",
+    "ward": "世田谷区",
+    "station": "下北沢駅",
+    "stationWalkMinutes": 5,
+    "capacity": 250,
+    "price": 17000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.setagaya.lg.jp/",
+    "officialUrl": "https://www.city.setagaya.lg.jp/",
+    "description": "下北沢駅近くの便利な立地。音響設備が充実。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "suginami-kokaido-1",
+    "name": "杉並公会堂 小ホール",
+    "address": "東京都杉並区上荻1-23-15",
+    "prefecture": "東京都",
+    "city": "杉並区",
+    "ward": "杉並区",
+    "station": "荻窪駅",
+    "stationWalkMinutes": 7,
+    "capacity": 150,
+    "price": 12000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.suginamikoukaidou.com/",
+    "officialUrl": "https://www.suginamikoukaidou.com/",
+    "description": "音響に定評のある小ホール。室内楽やソロリサイタルに最適。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "suginami-kokaido-2",
+    "name": "杉並公会堂 大ホール",
+    "address": "東京都杉並区上荻1-23-15",
+    "prefecture": "東京都",
+    "city": "杉並区",
+    "ward": "杉並区",
+    "station": "荻窪駅",
+    "stationWalkMinutes": 7,
+    "capacity": 1190,
+    "price": 45000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.suginamikoukaidou.com/",
+    "officialUrl": "https://www.suginamikoukaidou.com/",
+    "description": "杉並区最大のホール。オーケストラコンサートにも対応。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "suginami-asagaya-1",
+    "name": "阿佐谷地域区民センター ホール",
+    "address": "東京都杉並区阿佐谷南1-47-17",
+    "prefecture": "東京都",
+    "city": "杉並区",
+    "ward": "杉並区",
+    "station": "阿佐ヶ谷駅",
+    "stationWalkMinutes": 2,
+    "capacity": 120,
+    "price": 9000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.suginami.tokyo.jp/",
+    "officialUrl": "https://www.city.suginami.tokyo.jp/",
+    "description": "駅から近く、小規模な発表会に最適。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "nakano-zero-1",
+    "name": "なかのZERO 小ホール",
+    "address": "東京都中野区中野2-9-7",
+    "prefecture": "東京都",
+    "city": "中野区",
+    "ward": "中野区",
+    "station": "中野駅",
+    "stationWalkMinutes": 8,
+    "capacity": 180,
+    "price": 14000,
+    "priceNote": "区民・区内団体は割引あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.nices.jp/",
+    "officialUrl": "https://www.nices.jp/",
+    "description": "中野駅から徒歩圏内。アクセス良好な文化施設。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "nakano-zero-2",
+    "name": "なかのZERO 大ホール",
+    "address": "東京都中野区中野2-9-7",
+    "prefecture": "東京都",
+    "city": "中野区",
+    "ward": "中野区",
+    "station": "中野駅",
+    "stationWalkMinutes": 8,
+    "capacity": 552,
+    "price": 32000,
+    "priceNote": "区民・区内団体は割引あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.nices.jp/",
+    "officialUrl": "https://www.nices.jp/",
+    "description": "中規模のコンサートに適した本格的なホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "nakano-kumin-1",
+    "name": "中野区南部区民ホール",
+    "address": "東京都中野区弥生町6-7-1",
+    "prefecture": "東京都",
+    "city": "中野区",
+    "ward": "中野区",
+    "station": "中野新橋駅",
+    "stationWalkMinutes": 10,
+    "capacity": 100,
+    "price": 8000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.city.nakano.tokyo.jp/",
+    "officialUrl": "https://www.city.nakano.tokyo.jp/",
+    "description": "地域密着型の小ホール。駐車場あり。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "bunkyo-civic-1",
+    "name": "文京シビックホール 小ホール",
+    "address": "東京都文京区春日1-16-21",
+    "prefecture": "東京都",
+    "city": "文京区",
+    "ward": "文京区",
+    "station": "後楽園駅",
+    "stationWalkMinutes": 1,
+    "capacity": 370,
+    "price": 25000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.b-academy.jp/",
+    "officialUrl": "https://www.b-academy.jp/",
+    "description": "駅直結の好立地。本格的な音響設備を備えた人気ホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "bunkyo-civic-2",
+    "name": "文京シビックホール 大ホール",
+    "address": "東京都文京区春日1-16-21",
+    "prefecture": "東京都",
+    "city": "文京区",
+    "ward": "文京区",
+    "station": "後楽園駅",
+    "stationWalkMinutes": 1,
+    "capacity": 1802,
+    "price": 80000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.b-academy.jp/",
+    "officialUrl": "https://www.b-academy.jp/",
+    "description": "文京区最大のホール。オーケストラコンサートに最適。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "bunkyo-kumin-1",
+    "name": "文京区民センター ホール",
+    "address": "東京都文京区本郷4-15-14",
+    "prefecture": "東京都",
+    "city": "文京区",
+    "ward": "文京区",
+    "station": "春日駅",
+    "stationWalkMinutes": 5,
+    "capacity": 200,
+    "price": 15000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.bunkyo.lg.jp/",
+    "officialUrl": "https://www.city.bunkyo.lg.jp/",
+    "description": "本郷地区の文化拠点。室内楽に適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "chiyoda-hibiya-1",
+    "name": "日比谷公会堂",
+    "address": "東京都千代田区日比谷公園1-3",
+    "prefecture": "東京都",
+    "city": "千代田区",
+    "ward": "千代田区",
+    "station": "霞ヶ関駅",
+    "stationWalkMinutes": 3,
+    "capacity": 2074,
+    "price": 90000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.city.chiyoda.lg.jp/",
+    "officialUrl": "https://www.city.chiyoda.lg.jp/",
+    "description": "歴史ある大ホール。大規模コンサートに最適。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "chiyoda-kudan-1",
+    "name": "千代田区立内幸町ホール",
+    "address": "東京都千代田区内幸町1-5-1",
+    "prefecture": "東京都",
+    "city": "千代田区",
+    "ward": "千代田区",
+    "station": "内幸町駅",
+    "stationWalkMinutes": 1,
+    "capacity": 200,
+    "price": 18000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.chiyoda.lg.jp/",
+    "officialUrl": "https://www.city.chiyoda.lg.jp/",
+    "description": "駅直結の便利なホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "chuo-tsukiji-1",
+    "name": "中央区立築地社会教育会館ホール",
+    "address": "東京都中央区築地4-15-1",
+    "prefecture": "東京都",
+    "city": "中央区",
+    "ward": "中央区",
+    "station": "築地駅",
+    "stationWalkMinutes": 3,
+    "capacity": 200,
+    "price": 16000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.chuo.lg.jp/",
+    "officialUrl": "https://www.city.chuo.lg.jp/",
+    "description": "築地エリアの文化拠点。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "chuo-nihonbashi-1",
+    "name": "中央区立日本橋社会教育会館ホール",
+    "address": "東京都中央区日本橋人形町1-1-17",
+    "prefecture": "東京都",
+    "city": "中央区",
+    "ward": "中央区",
+    "station": "人形町駅",
+    "stationWalkMinutes": 2,
+    "capacity": 180,
+    "price": 15000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.chuo.lg.jp/",
+    "officialUrl": "https://www.city.chuo.lg.jp/",
+    "description": "日本橋エリアの便利なホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "minato-akasaka-1",
+    "name": "港区立赤坂区民センター ホール",
+    "address": "東京都港区赤坂4-18-13",
+    "prefecture": "東京都",
+    "city": "港区",
+    "ward": "港区",
+    "station": "赤坂見附駅",
+    "stationWalkMinutes": 5,
+    "capacity": 250,
+    "price": 20000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.minato.tokyo.jp/",
+    "officialUrl": "https://www.city.minato.tokyo.jp/",
+    "description": "赤坂エリアの文化施設。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "minato-azabu-1",
+    "name": "港区立麻布区民センター ホール",
+    "address": "東京都港区麻布十番4-3-1",
+    "prefecture": "東京都",
+    "city": "港区",
+    "ward": "港区",
+    "station": "麻布十番駅",
+    "stationWalkMinutes": 3,
+    "capacity": 200,
+    "price": 18000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.minato.tokyo.jp/",
+    "officialUrl": "https://www.city.minato.tokyo.jp/",
+    "description": "麻布エリアの文化拠点。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "minato-shibaura-1",
+    "name": "港区立芝浦区民センター ホール",
+    "address": "東京都港区芝浦4-13-1",
+    "prefecture": "東京都",
+    "city": "港区",
+    "ward": "港区",
+    "station": "田町駅",
+    "stationWalkMinutes": 7,
+    "capacity": 180,
+    "price": 17000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.minato.tokyo.jp/",
+    "officialUrl": "https://www.city.minato.tokyo.jp/",
+    "description": "芝浦エリアのホール。駐車場あり。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shinjuku-bunka-1",
+    "name": "新宿文化センター 大ホール",
+    "address": "東京都新宿区新宿6-14-1",
+    "prefecture": "東京都",
+    "city": "新宿区",
+    "ward": "新宿区",
+    "station": "新宿三丁目駅",
+    "stationWalkMinutes": 8,
+    "capacity": 1802,
+    "price": 75000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.regasu-shinjuku.or.jp/",
+    "officialUrl": "https://www.regasu-shinjuku.or.jp/",
+    "description": "新宿区最大のホール。本格的なコンサートに対応。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shinjuku-bunka-2",
+    "name": "新宿文化センター 小ホール",
+    "address": "東京都新宿区新宿6-14-1",
+    "prefecture": "東京都",
+    "city": "新宿区",
+    "ward": "新宿区",
+    "station": "新宿三丁目駅",
+    "stationWalkMinutes": 8,
+    "capacity": 210,
+    "price": 18000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.regasu-shinjuku.or.jp/",
+    "officialUrl": "https://www.regasu-shinjuku.or.jp/",
+    "description": "室内楽やリサイタルに適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shinjuku-yotsuya-1",
+    "name": "四谷区民ホール",
+    "address": "東京都新宿区内藤町87",
+    "prefecture": "東京都",
+    "city": "新宿区",
+    "ward": "新宿区",
+    "station": "新宿御苑前駅",
+    "stationWalkMinutes": 5,
+    "capacity": 400,
+    "price": 28000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.shinjuku.lg.jp/",
+    "officialUrl": "https://www.city.shinjuku.lg.jp/",
+    "description": "四谷エリアの中規模ホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "taito-asakusa-1",
+    "name": "台東区立浅草公会堂",
+    "address": "東京都台東区浅草1-38-6",
+    "prefecture": "東京都",
+    "city": "台東区",
+    "ward": "台東区",
+    "station": "浅草駅",
+    "stationWalkMinutes": 5,
+    "capacity": 1082,
+    "price": 50000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.city.taito.lg.jp/",
+    "officialUrl": "https://www.city.taito.lg.jp/",
+    "description": "浅草の歴史あるホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "taito-ueno-1",
+    "name": "台東区生涯学習センター ホール",
+    "address": "東京都台東区西浅草3-25-16",
+    "prefecture": "東京都",
+    "city": "台東区",
+    "ward": "台東区",
+    "station": "田原町駅",
+    "stationWalkMinutes": 3,
+    "capacity": 300,
+    "price": 20000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.taito.lg.jp/",
+    "officialUrl": "https://www.city.taito.lg.jp/",
+    "description": "生涯学習の拠点施設。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "sumida-triphony-1",
+    "name": "すみだトリフォニーホール 大ホール",
+    "address": "東京都墨田区錦糸1-2-3",
+    "prefecture": "東京都",
+    "city": "墨田区",
+    "ward": "墨田区",
+    "station": "錦糸町駅",
+    "stationWalkMinutes": 5,
+    "capacity": 1801,
+    "price": 85000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.triphony.com/",
+    "officialUrl": "https://www.triphony.com/",
+    "description": "世界的に評価される音響を誇るホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "sumida-triphony-2",
+    "name": "すみだトリフォニーホール 小ホール",
+    "address": "東京都墨田区錦糸1-2-3",
+    "prefecture": "東京都",
+    "city": "墨田区",
+    "ward": "墨田区",
+    "station": "錦糸町駅",
+    "stationWalkMinutes": 5,
+    "capacity": 252,
+    "price": 22000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.triphony.com/",
+    "officialUrl": "https://www.triphony.com/",
+    "description": "室内楽に最適な音響設計。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "koto-tiara-1",
+    "name": "ティアラこうとう 大ホール",
+    "address": "東京都江東区住吉2-28-36",
+    "prefecture": "東京都",
+    "city": "江東区",
+    "ward": "江東区",
+    "station": "住吉駅",
+    "stationWalkMinutes": 4,
+    "capacity": 1300,
+    "price": 65000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.kcf.or.jp/tiara/",
+    "officialUrl": "https://www.kcf.or.jp/tiara/",
+    "description": "江東区の文化拠点。大規模コンサートに対応。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "koto-tiara-2",
+    "name": "ティアラこうとう 小ホール",
+    "address": "東京都江東区住吉2-28-36",
+    "prefecture": "東京都",
+    "city": "江東区",
+    "ward": "江東区",
+    "station": "住吉駅",
+    "stationWalkMinutes": 4,
+    "capacity": 240,
+    "price": 19000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.kcf.or.jp/tiara/",
+    "officialUrl": "https://www.kcf.or.jp/tiara/",
+    "description": "室内楽やリサイタルに適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-kumin-1",
+    "name": "品川区立総合区民会館 きゅりあん 大ホール",
+    "address": "東京都品川区東大井5-18-1",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "大井町駅",
+    "stationWalkMinutes": 1,
+    "capacity": 1074,
+    "price": 55000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/",
+    "description": "駅直結の便利なホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-kumin-2",
+    "name": "品川区立総合区民会館 きゅりあん 小ホール",
+    "address": "東京都品川区東大井5-18-1",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "大井町駅",
+    "stationWalkMinutes": 1,
+    "capacity": 270,
+    "price": 21000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/",
+    "description": "室内楽に適した音響。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "meguro-persimmon-1",
+    "name": "めぐろパーシモンホール 大ホール",
+    "address": "東京都目黒区八雲1-1-1",
+    "prefecture": "東京都",
+    "city": "目黒区",
+    "ward": "目黒区",
+    "station": "都立大学駅",
+    "stationWalkMinutes": 7,
+    "capacity": 1200,
+    "price": 60000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.persimmon.or.jp/",
+    "officialUrl": "https://www.persimmon.or.jp/",
+    "description": "目黒区の文化拠点。優れた音響設備。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "meguro-persimmon-2",
+    "name": "めぐろパーシモンホール 小ホール",
+    "address": "東京都目黒区八雲1-1-1",
+    "prefecture": "東京都",
+    "city": "目黒区",
+    "ward": "目黒区",
+    "station": "都立大学駅",
+    "stationWalkMinutes": 7,
+    "capacity": 200,
+    "price": 17000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.persimmon.or.jp/",
+    "officialUrl": "https://www.persimmon.or.jp/",
+    "description": "室内楽やリサイタルに最適。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "ota-aprico-1",
+    "name": "大田区民ホール アプリコ 大ホール",
+    "address": "東京都大田区蒲田5-37-3",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "蒲田駅",
+    "stationWalkMinutes": 3,
+    "capacity": 1477,
+    "price": 70000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.ota-bunka.or.jp/",
+    "officialUrl": "https://www.ota-bunka.or.jp/",
+    "description": "大田区最大のホール。本格的なコンサートに対応。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "ota-aprico-2",
+    "name": "大田区民ホール アプリコ 小ホール",
+    "address": "東京都大田区蒲田5-37-3",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "蒲田駅",
+    "stationWalkMinutes": 3,
+    "capacity": 300,
+    "price": 23000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.ota-bunka.or.jp/",
+    "officialUrl": "https://www.ota-bunka.or.jp/",
+    "description": "室内楽に適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "toshima-civic-1",
+    "name": "としま区民センター ホール",
+    "address": "東京都豊島区東池袋1-20-10",
+    "prefecture": "東京都",
+    "city": "豊島区",
+    "ward": "豊島区",
+    "station": "池袋駅",
+    "stationWalkMinutes": 7,
+    "capacity": 500,
+    "price": 35000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.toshima.lg.jp/",
+    "officialUrl": "https://www.city.toshima.lg.jp/",
+    "description": "池袋駅近くの便利なホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "toshima-minami-1",
+    "name": "豊島区立南大塚ホール",
+    "address": "東京都豊島区南大塚2-36-1",
+    "prefecture": "東京都",
+    "city": "豊島区",
+    "ward": "豊島区",
+    "station": "大塚駅",
+    "stationWalkMinutes": 5,
+    "capacity": 180,
+    "price": 15000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.toshima.lg.jp/",
+    "officialUrl": "https://www.city.toshima.lg.jp/",
+    "description": "小規模な発表会に適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "kita-hokutopia-1",
+    "name": "北とぴあ さくらホール",
+    "address": "東京都北区王子1-11-1",
+    "prefecture": "東京都",
+    "city": "北区",
+    "ward": "北区",
+    "station": "王子駅",
+    "stationWalkMinutes": 2,
+    "capacity": 1300,
+    "price": 65000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.hokutopia.jp/",
+    "officialUrl": "https://www.hokutopia.jp/",
+    "description": "北区最大のホール。駅直結で便利。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "kita-hokutopia-2",
+    "name": "北とぴあ つつじホール",
+    "address": "東京都北区王子1-11-1",
+    "prefecture": "東京都",
+    "city": "北区",
+    "ward": "北区",
+    "station": "王子駅",
+    "stationWalkMinutes": 2,
+    "capacity": 300,
+    "price": 22000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.hokutopia.jp/",
+    "officialUrl": "https://www.hokutopia.jp/",
+    "description": "室内楽に適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "arakawa-sunny-1",
+    "name": "サンパール荒川 大ホール",
+    "address": "東京都荒川区荒川1-1-1",
+    "prefecture": "東京都",
+    "city": "荒川区",
+    "ward": "荒川区",
+    "station": "荒川区役所前駅",
+    "stationWalkMinutes": 1,
+    "capacity": 1200,
+    "price": 60000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.city.arakawa.tokyo.jp/",
+    "officialUrl": "https://www.city.arakawa.tokyo.jp/",
+    "description": "荒川区の文化拠点。駅直結で便利。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "arakawa-sunny-2",
+    "name": "サンパール荒川 小ホール",
+    "address": "東京都荒川区荒川1-1-1",
+    "prefecture": "東京都",
+    "city": "荒川区",
+    "ward": "荒川区",
+    "station": "荒川区役所前駅",
+    "stationWalkMinutes": 1,
+    "capacity": 200,
+    "price": 17000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.arakawa.tokyo.jp/",
+    "officialUrl": "https://www.city.arakawa.tokyo.jp/",
+    "description": "小規模なコンサートに適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "itabashi-bunka-1",
+    "name": "板橋区立文化会館 大ホール",
+    "address": "東京都板橋区大山東町51-1",
+    "prefecture": "東京都",
+    "city": "板橋区",
+    "ward": "板橋区",
+    "station": "大山駅",
+    "stationWalkMinutes": 5,
+    "capacity": 1200,
+    "price": 60000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.city.itabashi.tokyo.jp/",
+    "officialUrl": "https://www.city.itabashi.tokyo.jp/",
+    "description": "板橋区の文化拠点。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "itabashi-bunka-2",
+    "name": "板橋区立文化会館 小ホール",
+    "address": "東京都板橋区大山東町51-1",
+    "prefecture": "東京都",
+    "city": "板橋区",
+    "ward": "板橋区",
+    "station": "大山駅",
+    "stationWalkMinutes": 5,
+    "capacity": 250,
+    "price": 20000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.city.itabashi.tokyo.jp/",
+    "officialUrl": "https://www.city.itabashi.tokyo.jp/",
+    "description": "室内楽に適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "nerima-bunka-1",
+    "name": "練馬文化センター 大ホール",
+    "address": "東京都練馬区練馬1-17-37",
+    "prefecture": "東京都",
+    "city": "練馬区",
+    "ward": "練馬区",
+    "station": "練馬駅",
+    "stationWalkMinutes": 1,
+    "capacity": 1477,
+    "price": 70000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.neribun.or.jp/",
+    "officialUrl": "https://www.neribun.or.jp/",
+    "description": "練馬区最大のホール。駅直結で便利。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "nerima-bunka-2",
+    "name": "練馬文化センター 小ホール",
+    "address": "東京都練馬区練馬1-17-37",
+    "prefecture": "東京都",
+    "city": "練馬区",
+    "ward": "練馬区",
+    "station": "練馬駅",
+    "stationWalkMinutes": 1,
+    "capacity": 592,
+    "price": 38000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.neribun.or.jp/",
+    "officialUrl": "https://www.neribun.or.jp/",
+    "description": "中規模のコンサートに適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "nerima-hikarigaoka-1",
+    "name": "練馬区立光が丘区民センター ホール",
+    "address": "東京都練馬区光が丘2-9-6",
+    "prefecture": "東京都",
+    "city": "練馬区",
+    "ward": "練馬区",
+    "station": "光が丘駅",
+    "stationWalkMinutes": 3,
+    "capacity": 200,
+    "price": 16000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.nerima.tokyo.jp/",
+    "officialUrl": "https://www.city.nerima.tokyo.jp/",
+    "description": "光が丘エリアの文化施設。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "adachi-galaxy-1",
+    "name": "ギャラクシティ 西新井文化ホール",
+    "address": "東京都足立区栗原1-3-1",
+    "prefecture": "東京都",
+    "city": "足立区",
+    "ward": "足立区",
+    "station": "西新井駅",
+    "stationWalkMinutes": 3,
+    "capacity": 900,
+    "price": 48000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.galaxcity.jp/",
+    "officialUrl": "https://www.galaxcity.jp/",
+    "description": "足立区の文化拠点。複合施設内のホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "adachi-kumin-1",
+    "name": "足立区立竹の塚地域学習センター ホール",
+    "address": "東京都足立区竹の塚2-25-17",
+    "prefecture": "東京都",
+    "city": "足立区",
+    "ward": "足立区",
+    "station": "竹ノ塚駅",
+    "stationWalkMinutes": 5,
+    "capacity": 200,
+    "price": 15000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.adachi.tokyo.jp/",
+    "officialUrl": "https://www.city.adachi.tokyo.jp/",
+    "description": "地域の文化活動拠点。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "katsushika-symphony-1",
+    "name": "かつしかシンフォニーヒルズ モーツァルトホール",
+    "address": "東京都葛飾区立石6-33-1",
+    "prefecture": "東京都",
+    "city": "葛飾区",
+    "ward": "葛飾区",
+    "station": "青砥駅",
+    "stationWalkMinutes": 8,
+    "capacity": 1318,
+    "price": 65000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.k-mil.gr.jp/",
+    "officialUrl": "https://www.k-mil.gr.jp/",
+    "description": "葛飾区最大のホール。優れた音響設備。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "katsushika-symphony-2",
+    "name": "かつしかシンフォニーヒルズ アイリスホール",
+    "address": "東京都葛飾区立石6-33-1",
+    "prefecture": "東京都",
+    "city": "葛飾区",
+    "ward": "葛飾区",
+    "station": "青砥駅",
+    "stationWalkMinutes": 8,
+    "capacity": 318,
+    "price": 24000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.k-mil.gr.jp/",
+    "officialUrl": "https://www.k-mil.gr.jp/",
+    "description": "室内楽に適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "edogawa-tower-1",
+    "name": "タワーホール船堀 大ホール",
+    "address": "東京都江戸川区船堀4-1-1",
+    "prefecture": "東京都",
+    "city": "江戸川区",
+    "ward": "江戸川区",
+    "station": "船堀駅",
+    "stationWalkMinutes": 1,
+    "capacity": 1002,
+    "price": 52000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 180
+    },
+    "reservationUrl": "https://www.towerhall.jp/",
+    "officialUrl": "https://www.towerhall.jp/",
+    "description": "江戸川区の文化拠点。駅直結で便利。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "edogawa-tower-2",
+    "name": "タワーホール船堀 小ホール",
+    "address": "東京都江戸川区船堀4-1-1",
+    "prefecture": "東京都",
+    "city": "江戸川区",
+    "ward": "江戸川区",
+    "station": "船堀駅",
+    "stationWalkMinutes": 1,
+    "capacity": 299,
+    "price": 23000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 120
+    },
+    "reservationUrl": "https://www.towerhall.jp/",
+    "officialUrl": "https://www.towerhall.jp/",
+    "description": "室内楽やリサイタルに適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "edogawa-kumin-1",
+    "name": "江戸川区総合文化センター 小ホール",
+    "address": "東京都江戸川区中央4-14-1",
+    "prefecture": "東京都",
+    "city": "江戸川区",
+    "ward": "江戸川区",
+    "station": "新小岩駅",
+    "stationWalkMinutes": 15,
+    "capacity": 180,
+    "price": 14000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.edogawa.tokyo.jp/",
+    "officialUrl": "https://www.city.edogawa.tokyo.jp/",
+    "description": "小規模なコンサートに適したホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shibuya-hatsudai-1",
+    "name": "渋谷区文化総合センター大和田 練習室A",
+    "address": "東京都渋谷区桜丘町23-21",
+    "prefecture": "東京都",
+    "city": "渋谷区",
+    "ward": "渋谷区",
+    "station": "渋谷駅",
+    "stationWalkMinutes": 5,
+    "capacity": 30,
+    "price": 3000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.shibuya-bunka.jp/",
+    "officialUrl": "https://www.shibuya-bunka.jp/",
+    "description": "個人練習や小グループでの練習に。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "setagaya-karasuyama-1",
+    "name": "烏山区民センター ホール",
+    "address": "東京都世田谷区南烏山6-2-19",
+    "prefecture": "東京都",
+    "city": "世田谷区",
+    "ward": "世田谷区",
+    "station": "千歳烏山駅",
+    "stationWalkMinutes": 2,
+    "capacity": 150,
+    "price": 13000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.setagaya.lg.jp/",
+    "officialUrl": "https://www.city.setagaya.lg.jp/",
+    "description": "烏山エリアの文化施設。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "setagaya-tamagawa-1",
+    "name": "玉川区民会館 ホール",
+    "address": "東京都世田谷区等々力3-4-1",
+    "prefecture": "東京都",
+    "city": "世田谷区",
+    "ward": "世田谷区",
+    "station": "等々力駅",
+    "stationWalkMinutes": 7,
+    "capacity": 180,
+    "price": 14000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.setagaya.lg.jp/",
+    "officialUrl": "https://www.city.setagaya.lg.jp/",
+    "description": "玉川エリアの文化拠点。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "suginami-koenji-1",
+    "name": "高円寺地域区民センター ホール",
+    "address": "東京都杉並区高円寺南2-24-18",
+    "prefecture": "東京都",
+    "city": "杉並区",
+    "ward": "杉並区",
+    "station": "高円寺駅",
+    "stationWalkMinutes": 5,
+    "capacity": 100,
+    "price": 8000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.city.suginami.tokyo.jp/",
+    "officialUrl": "https://www.city.suginami.tokyo.jp/",
+    "description": "高円寺エリアの小ホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "suginami-nishiogikubo-1",
+    "name": "西荻地域区民センター ホール",
+    "address": "東京都杉並区西荻北2-2-1",
+    "prefecture": "東京都",
+    "city": "杉並区",
+    "ward": "杉並区",
+    "station": "西荻窪駅",
+    "stationWalkMinutes": 3,
+    "capacity": 120,
+    "price": 9000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.city.suginami.tokyo.jp/",
+    "officialUrl": "https://www.city.suginami.tokyo.jp/",
+    "description": "西荻窪エリアの文化施設。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "nakano-higashi-1",
+    "name": "中野区東部区民活動センター ホール",
+    "address": "東京都中野区中央1-12-3",
+    "prefecture": "東京都",
+    "city": "中野区",
+    "ward": "中野区",
+    "station": "中野坂上駅",
+    "stationWalkMinutes": 8,
+    "capacity": 80,
+    "price": 6000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.city.nakano.tokyo.jp/",
+    "officialUrl": "https://www.city.nakano.tokyo.jp/",
+    "description": "小規模な発表会や練習に。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "bunkyo-koishikawa-1",
+    "name": "文京区立小石川図書館 多目的ホール",
+    "address": "東京都文京区小石川5-9-20",
+    "prefecture": "東京都",
+    "city": "文京区",
+    "ward": "文京区",
+    "station": "茗荷谷駅",
+    "stationWalkMinutes": 6,
+    "capacity": 100,
+    "price": 8000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.city.bunkyo.lg.jp/",
+    "officialUrl": "https://www.city.bunkyo.lg.jp/",
+    "description": "図書館併設の多目的ホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "chiyoda-kanda-1",
+    "name": "千代田区立神田さくら館 ホール",
+    "address": "東京都千代田区神田司町2-16",
+    "prefecture": "東京都",
+    "city": "千代田区",
+    "ward": "千代田区",
+    "station": "神保町駅",
+    "stationWalkMinutes": 5,
+    "capacity": 150,
+    "price": 14000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.chiyoda.lg.jp/",
+    "officialUrl": "https://www.city.chiyoda.lg.jp/",
+    "description": "神田エリアの文化施設。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "chuo-kyobashi-1",
+    "name": "中央区立京橋区民館 ホール",
+    "address": "東京都中央区銀座1-25-3",
+    "prefecture": "東京都",
+    "city": "中央区",
+    "ward": "中央区",
+    "station": "京橋駅",
+    "stationWalkMinutes": 2,
+    "capacity": 120,
+    "price": 11000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.chuo.lg.jp/",
+    "officialUrl": "https://www.city.chuo.lg.jp/",
+    "description": "銀座・京橋エリアの便利なホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "minato-takanawa-1",
+    "name": "港区立高輪区民センター ホール",
+    "address": "東京都港区高輪1-16-25",
+    "prefecture": "東京都",
+    "city": "港区",
+    "ward": "港区",
+    "station": "泉岳寺駅",
+    "stationWalkMinutes": 3,
+    "capacity": 150,
+    "price": 16000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.minato.tokyo.jp/",
+    "officialUrl": "https://www.city.minato.tokyo.jp/",
+    "description": "高輪エリアの文化施設。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shinjuku-okubo-1",
+    "name": "新宿区立大久保地域センター ホール",
+    "address": "東京都新宿区大久保2-12-7",
+    "prefecture": "東京都",
+    "city": "新宿区",
+    "ward": "新宿区",
+    "station": "新大久保駅",
+    "stationWalkMinutes": 8,
+    "capacity": 120,
+    "price": 10000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.city.shinjuku.lg.jp/",
+    "officialUrl": "https://www.city.shinjuku.lg.jp/",
+    "description": "大久保エリアの地域センター。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "taito-yanaka-1",
+    "name": "台東区立谷中区民館 ホール",
+    "address": "東京都台東区谷中2-17-20",
+    "prefecture": "東京都",
+    "city": "台東区",
+    "ward": "台東区",
+    "station": "千駄木駅",
+    "stationWalkMinutes": 5,
+    "capacity": 100,
+    "price": 8000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.city.taito.lg.jp/",
+    "officialUrl": "https://www.city.taito.lg.jp/",
+    "description": "谷中エリアの小ホール。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "sumida-mukojima-1",
+    "name": "墨田区立向島地域プラザ ホール",
+    "address": "東京都墨田区東向島2-17-14",
+    "prefecture": "東京都",
+    "city": "墨田区",
+    "ward": "墨田区",
+    "station": "曳舟駅",
+    "stationWalkMinutes": 5,
+    "capacity": 100,
+    "price": 8000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.city.sumida.lg.jp/",
+    "officialUrl": "https://www.city.sumida.lg.jp/",
+    "description": "向島エリアの地域プラザ。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "koto-kameido-1",
+    "name": "江東区立亀戸文化センター ホール",
+    "address": "東京都江東区亀戸2-19-1",
+    "prefecture": "東京都",
+    "city": "江東区",
+    "ward": "江東区",
+    "station": "亀戸駅",
+    "stationWalkMinutes": 2,
+    "capacity": 200,
+    "price": 17000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.kcf.or.jp/",
+    "officialUrl": "https://www.kcf.or.jp/",
+    "description": "亀戸エリアの文化センター。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-ebara-1",
+    "name": "品川区立荏原文化センター ホール",
+    "address": "東京都品川区中延1-9-15",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "荏原中延駅",
+    "stationWalkMinutes": 3,
+    "capacity": 200,
+    "price": 16000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/",
+    "description": "荏原エリアの文化センター。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "meguro-kumin-1",
+    "name": "目黒区民センター ホール",
+    "address": "東京都目黒区目黒2-4-36",
+    "prefecture": "東京都",
+    "city": "目黒区",
+    "ward": "目黒区",
+    "station": "目黒駅",
+    "stationWalkMinutes": 10,
+    "capacity": 250,
+    "price": 19000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "grand",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.city.meguro.tokyo.jp/",
+    "officialUrl": "https://www.city.meguro.tokyo.jp/",
+    "description": "目黒駅近くの区民センター。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "ota-rokugo-1",
+    "name": "大田区立六郷地域力推進センター ホール",
+    "address": "東京都大田区仲六郷2-44-11",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "雑色駅",
+    "stationWalkMinutes": 5,
+    "capacity": 120,
+    "price": 10000,
+    "priceNote": "区民料金あり",
+    "facilities": {
+      "piano": "upright",
+      "soundSystem": true,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 60
+    },
+    "reservationUrl": "https://www.city.ota.tokyo.jp/",
+    "officialUrl": "https://www.city.ota.tokyo.jp/",
+    "description": "六郷エリアの地域センター。",
+    "createdAt": "2026-04-19T00:00:00Z",
+    "updatedAt": "2026-04-19T00:00:00Z"
+  }
+]

@@ -1,0 +1,2495 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+
+
+
+<!-- HTTPヘッダ制御 -->
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<!-- キャッシュ対策(2行) -->
+<meta http-equiv="Expire" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<!-- ページの説明とキーワード -->
+<meta name="description" content="公共施設予約システム" />
+<meta name="keywords" content="公共,施設予約" />
+<!-- タイトル -->
+<title>公共施設予約システム（施設絞り込み（場所選択））</title>
+
+
+
+
+
+<!-- CSS、IMGのデフォルトパスの設定 -->
+
+<!-- 共通スタイルシート -->
+<link rel="stylesheet" type="text/css" href="/eshisetsu/css/std/import.css?var=20221228" />
+<link rel="SHORTCUT ICON" href='/eshisetsu/img/std/icon/favicon.ico' />
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5253WJXX');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- 共通スクリプト -->
+<script type="text/javascript" src='/eshisetsu/js/jquery.js?var=20221228'></script>
+<script type="text/javascript" src='/eshisetsu/js/jquery.min.js?var=20221228'></script>
+<script type="text/javascript" src='/eshisetsu/js/jquery-ui-personalized.js?var=20221228'></script>
+<script type="text/javascript" src='/eshisetsu/js/meca.js?var=20221228'></script>
+<script type="text/javascript" src='/eshisetsu/js/CommonFunctions.js?var=20221228'></script>
+
+<!--[if IE 6]>
+	<script type="text/javascript" src="/eshisetsu/js/DD_belatedPNG-min.js"></script>
+	<script type="text/javascript">
+		DD_belatedPNG.fix('.pngbg');
+	</script>
+<![endif]-->
+<!-- キーボードの制御 -->
+<script type="text/javascript" src="/eshisetsu/js/checkHistoryBack.js"></script>
+
+<!-- 共通変数の設定 -->
+
+
+
+
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="author" content="公共施設予約システム" />
+<meta name="copyright" content="Copyright (C) 2020 , All rights reserved." />
+<meta name="keywords" content=" " />
+<meta name="description" content="" />
+<meta property="og:url" content=" URL" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:image" content="" />
+<!-- セッションタイムアウト通知 -->
+<script type="text/javascript">
+	<!--
+		function sessionNotice(limMin,str){
+			if(str=="pre"){
+				setTimeout(sessionNotice,60000,"0","fix");
+				alert("あと" + limMin + "分でセッションがタイムアウトします。");
+			}else{
+				alert("セッションがタイムアウトしました。");
+			}
+		}
+		$(document).ready( function(){
+			setTimeout(sessionNotice,28740000,"1","pre");
+		});
+	//-->
+</script>
+
+<script type="text/javascript">
+
+  function searchEquipment(){
+      var eml;
+      var selEquip = [];
+      //設備種別マスタリストを全件処理
+       
+            
+            //チェックされている設備種別のコード番号を配列に追加
+            elm = document.getElementById('facility01');
+            if ( elm.checked ) selEquip.push('01');
+            
+       
+            
+            //チェックされている設備種別のコード番号を配列に追加
+            elm = document.getElementById('facility02');
+            if ( elm.checked ) selEquip.push('02');
+            
+       
+            
+            //チェックされている設備種別のコード番号を配列に追加
+            elm = document.getElementById('facility03');
+            if ( elm.checked ) selEquip.push('03');
+            
+       
+            
+            //チェックされている設備種別のコード番号を配列に追加
+            elm = document.getElementById('facility04');
+            if ( elm.checked ) selEquip.push('04');
+            
+       
+            
+            //チェックされている設備種別のコード番号を配列に追加
+            elm = document.getElementById('facility05');
+            if ( elm.checked ) selEquip.push('05');
+            
+       
+            
+            //チェックされている設備種別のコード番号を配列に追加
+            elm = document.getElementById('facility06');
+            if ( elm.checked ) selEquip.push('06');
+            
+       
+            
+            //チェックされている設備種別のコード番号を配列に追加
+            elm = document.getElementById('facility07');
+            if ( elm.checked ) selEquip.push('07');
+            
+       
+            
+            //チェックされている設備種別のコード番号を配列に追加
+            elm = document.getElementById('facility08');
+            if ( elm.checked ) selEquip.push('08');
+            
+       
+       //設備種別　選択状態を渡して施設の表示切替
+       searchShisetsu(selEquip);
+  }
+  function searchShisetsu(equips){
+    //表示施設の一覧操作
+    
+    
+    var hitCnt;
+    var meisaiCnt;
+    var currentMeisaiUniqKey='';
+    var recordCnt;
+    
+    if(equips.length == 0){
+        //設備種別選んでなかったら全表示で終了
+        $('#multiShisetsuTable * > tr:nth-child(n)').show();
+        $('#searchEquipnotFound').hide();
+        return;
+    }
+    //明細件数初期化
+    meisaiCnt=1;
+    recordCnt=0;
+    $('#multiShisetsuTable * > tr:nth-child(n)').hide();
+    //１列目はヘッダなので表示
+    $('#multiShisetsuTable * > tr:nth-child(1)').show();
+       
+    
+    if(currentMeisaiUniqKey != '131113_001_15_16_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_15_16_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '02') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_15_16_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_15_16_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_15_16_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_15_16_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_15_16_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_15_16_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_15_16_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_15_16_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_15_16_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_15_16_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_15_16_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_15_16_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '08') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_16_07_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_16_07_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '02') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_16_07_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_16_07_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_16_07_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_16_07_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_16_07_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_16_07_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_12_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_12_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '01') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_12_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_12_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '02') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_12_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_12_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_12_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_12_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_12_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_12_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_12_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_12_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_12_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_12_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_12_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_12_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '08') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '01') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '02') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_17_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_17_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '08') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_18_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_18_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_18_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_18_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_18_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_18_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_18_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_18_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_18_13_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_18_13_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_18_19_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_18_19_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_18_19_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_18_19_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_18_19_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_18_19_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_18_19_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_18_19_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_18_19_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_18_19_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_03_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_03_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '01') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_03_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_03_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '02') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_03_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_03_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_03_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_03_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_03_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_03_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_03_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_03_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_03_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_03_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_03_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_03_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '08') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_14_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_14_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '01') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_14_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_14_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '02') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_14_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_14_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_14_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_14_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_14_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_14_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_14_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_14_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_14_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_14_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_19_14_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_19_14_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '08') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_20_08_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_20_08_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_20_08_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_20_08_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_20_08_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_20_08_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_20_08_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_20_08_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_20_08_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_20_08_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '02') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '08') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_02_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_02_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '02') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_02_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_02_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_02_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_02_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_02_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_02_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_02_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_02_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_02_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_02_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_33_02_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_33_02_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '08') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_67_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_67_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '02') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_67_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_67_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_67_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_67_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_67_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_67_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_67_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_67_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_67_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_67_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_67_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_67_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '08') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_72_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_72_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '02') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_72_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_72_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '03') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_72_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_72_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '04') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_72_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_72_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '05') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_72_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_72_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '06') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_72_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_72_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '07') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    if(currentMeisaiUniqKey != '131113_001_72_01_01'){
+        if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+        currentMeisaiUniqKey = '131113_001_72_01_01';
+        hitCnt = 0;
+        meisaiCnt+=1;
+    }
+    for ( var x=0 ; x < equips.length ; x++){
+        if(equips[x] == '08') hitCnt+=1;
+    }
+    //選択している設備種別の数 == 対象施設が保有している設備数
+    if (hitCnt == equips.length) {
+        $('#multiShisetsuTable * > tr:nth-child('+meisaiCnt+')').show();
+        recordCnt++;
+    }
+    
+    
+    //ループ後の最終処理
+    if(currentMeisaiUniqKey!='' && hitCnt< equips.length) document.getElementById('r_record'+(meisaiCnt-2)).checked=false;
+    // 非表示になっているものはチェックを外す
+    $('tr.btn_table').each(function(i, elm) {
+        if ($(elm).css('display') == 'none') {
+            document.getElementById('r_record'+i).checked=false;
+        }
+    });
+    
+    //設備種別検索で見つからなかった場合の表示
+    if (recordCnt == 0 ){
+        $('#searchEquipnotFound').show();
+    }
+  }
+  function selectCheckMeisaiUniqKey(sta){
+    var bl = false;
+    if(sta == 'true') bl = true;
+    if (bl) {
+        $('tr.btn_table').each(function(i, elm) {
+            if ($(elm).css('display') != 'none') {
+                // 「施設を全て選択する」の場合、非表示になっていない明細のみ選択状態にする
+                document.getElementById('r_record'+i).checked=true;
+            }
+        });
+    } else {
+        $('input[name="checkMeisaiUniqKey"]').prop('checked',bl);
+    }
+  }
+$(function () {
+    //施設・設備種別マスタリストを全件処理
+    //チェックされている設備種別のコード番号を配列に追加
+       
+        
+        document.getElementById("equipment131113_001_15_16_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico02' /><label for='facilityico02'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_15_16_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_15_16_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_15_16_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_15_16_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_15_16_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_15_16_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico08' /><label for='facilityico08'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_16_07_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico02' /><label for='facilityico02'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_16_07_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_16_07_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_16_07_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_12_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico01' /><label for='facilityico01'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_12_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico02' /><label for='facilityico02'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_12_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_12_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_12_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_12_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_12_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_12_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico08' /><label for='facilityico08'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico01' /><label for='facilityico01'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico02' /><label for='facilityico02'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_17_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico08' /><label for='facilityico08'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_18_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_18_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_18_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_18_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_18_13_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_18_19_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_18_19_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_18_19_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_18_19_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_18_19_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_03_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico01' /><label for='facilityico01'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_03_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico02' /><label for='facilityico02'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_03_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_03_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_03_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_03_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_03_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_03_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico08' /><label for='facilityico08'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_14_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico01' /><label for='facilityico01'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_14_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico02' /><label for='facilityico02'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_14_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_14_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_14_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_14_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_14_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_19_14_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico08' /><label for='facilityico08'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_20_08_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_20_08_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_20_08_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_20_08_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_20_08_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico02' /><label for='facilityico02'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico08' /><label for='facilityico08'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_02_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico02' /><label for='facilityico02'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_02_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_02_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_02_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_02_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_02_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_33_02_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico08' /><label for='facilityico08'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_67_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico02' /><label for='facilityico02'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_67_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_67_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_67_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_67_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_67_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_67_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico08' /><label for='facilityico08'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_72_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico02' /><label for='facilityico02'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_72_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico03' /><label for='facilityico03'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_72_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico04' /><label for='facilityico04'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_72_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico05' /><label for='facilityico05'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_72_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico06' /><label for='facilityico06'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_72_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico07' /><label for='facilityico07'></label></li>");
+        
+        
+        document.getElementById("equipment131113_001_72_01_01").insertAdjacentHTML("beforeend" ,"<li style='padding:4px 0 4px 0;'><input type='hidden' id='facilityico08' /><label for='facilityico08'></label></li>");
+        
+    //設備種別検索で見つからなかった場合の表示初期化
+    $('#searchEquipnotFound').hide();
+    
+    //前回の施設選択状況を読み込み
+    
+        
+        if(document.getElementById('k_record0')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record0').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record1')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record1').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record2')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record2').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record3')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record3').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record4')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record4').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record5')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record5').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record6')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record6').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record7')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record7').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record8')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record8').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record9')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record9').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record10')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record10').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record11')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record11').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record12')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record12').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record13')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record13').value+'"]').prop('checked',true);
+    
+        if(document.getElementById('k_record14')) $('input[type="checkbox"]input[value="'+document.getElementById('k_record14').value+'"]').prop('checked',true);
+        
+    
+});
+
+
+</script>
+
+</head>
+<body onunload="ignoreTrue();">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5253WJXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    <form name="menu.Menu.Form" method="post" action="/eshisetsu/menu/MenuLookup.cgi" onsubmit="return false;" id="formMenuMain">
+    
+    <input type="hidden" name="txtProcId" value="/menu/Menu" />
+    <input type="hidden" name="txtFunctionCode" value="" id="txtFunctionCode" />
+    </form>
+    
+    
+    <form name="yoyaku.ShisetsuMultiSelect.Form" method="post" action="/eshisetsu/yoyaku/ShisetsuMultiSelect.cgi" onsubmit="return false;" id="formMain">
+    
+    <input type="hidden" name="action" value="" id="action" />
+    <input type="hidden" name="txtProcId" value="/yoyaku/ShisetsuMultiSelect" id="txtProcId" />
+    
+
+    
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[0]" value="" id="k_record0" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[1]" value="" id="k_record1" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[2]" value="" id="k_record2" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[3]" value="" id="k_record3" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[4]" value="" id="k_record4" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[5]" value="" id="k_record5" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[6]" value="" id="k_record6" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[7]" value="" id="k_record7" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[8]" value="" id="k_record8" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[9]" value="" id="k_record9" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[10]" value="" id="k_record10" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[11]" value="" id="k_record11" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[12]" value="" id="k_record12" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[13]" value="" id="k_record13" />
+    
+        <input type="hidden" name="checkMeisaiUniqKey2[14]" value="" id="k_record14" />
+    
+    
+    <!-- header/ -->
+    
+	<header width="100%" >
+		<h1>
+			<a href="#" style="font-weight:bold" id="pageTopId" onclick="isNextFuncCodeSet('TopPage');">
+				
+				大田区公共施設利用システム
+			</a>
+		</h1>
+		
+		
+			<button type="button" id="id_hbmenu" class="btn_hbmenu" aria-expanded="false" aria-controls="sitemenu" title="サイトメニューボタン">
+				<span class="image"></span>
+				<span class="text"></span>
+			</button>
+		
+			<div id="sitemenu" class="box_navi" aria-hidden="true">
+				<nav aria-label="サイトメニュー">
+					
+					
+						<a href="#" onclick="isNextFuncCodeSet('TopPageYoyaku')">空き照会・予約</a>
+					
+					
+					
+						<a href="#" onclick="isNextFuncCodeSet('TopPageChusen')">抽選申込</a>
+					
+					
+					
+					
+						<a href="#" onclick="isNextFuncCodeSet('TodayInfo')">本日のお知らせ</a>
+					
+					
+					<a href="#" class="hb_close">メニューを閉じる</a>
+					<div id="focustrap" tabindex="0"></div>
+				</nav>
+			</div>
+			
+			<nav class="box_login" aria-label="ログイン・ログアウトナビゲーション">
+				<p class="name">
+				
+				ゲストユーザ<span>でログイン中</span></p>
+				&nbsp;<a href="javascript:void(0)" class="sitemap" onclick="isNextFuncCodeSet('SiteMap');">サイトマップ</a>
+				
+				<button type="button" id="id_hbmenu2" class="btn_hbmenu2" aria-expanded="false" aria-controls="sitemenu2" title="サイトメニューボタン">
+					<span class="image"></span><span class="text"></span>
+					
+				</button>
+			
+				<div id="sitemenu2" class="box_navi2" aria-hidden="true">
+					<nav aria-label="サイトメニュー">
+						
+						
+							<a href="#" onclick="isNextFuncCodeSet('TopPageYoyaku')">空き照会・予約</a>
+						
+						
+						
+							<a href="#" onclick="isNextFuncCodeSet('TopPageChusen')">抽選申込</a>
+						
+						
+						
+						
+							<a href="#" onclick="isNextFuncCodeSet('TodayInfo')">本日のお知らせ</a>
+						
+						
+						<a href="#" class="hb_close2">メニューを閉じる</a>
+						<div id="focustrap" tabindex="0"></div>
+					</nav>
+				</div>
+			</nav>
+			<nav class="box_gmenu" aria-label="グローバルナビゲーション">
+				
+				
+					<a href="#" onclick="isNextFuncCodeSet('TopPageYoyaku')"
+					
+						 class="curr gmenu_yoyaku"
+					
+					
+					>空き照会・予約</a>
+				
+				
+				
+					<a href="#" onclick="isNextFuncCodeSet('TopPageChusen')"
+					
+					
+						 class="gmenu_chusen"
+					
+					>抽選申込</a>
+				
+				
+			</nav>
+		
+		
+		
+		
+		
+	</header>
+    <!-- /header-->
+    
+    <main>
+        
+        <div id="errcolumn">
+            <noscript><p class="jserr"><strong>JavaScriptが無効になっているため使用できません。<br />ブラウザ設定でJavaScriptを有効にしてください。</strong></p></noscript>
+            
+        </div>
+        
+        <h2>施設を選択</h2>
+
+        <!-- パンクズ/ -->
+        <div class="breadclumbs">
+            <nav aria-label="予約段階のナビゲーション">
+                <a>施設検索</a>
+                <span class="active">施設選択</span>
+                <a>空き照会</a>
+                <a>対象区分選択</a>
+                <a>申込入力</a>
+                <a>内容確認</a>
+                <span class="fix">予約完了</span>
+            </nav>
+        </div>
+        <!-- /パンクズ -->
+
+        <!-- container/ -->
+        <div class="container">
+            <p class="txt_read">空き状況を照会する施設を一つ以上選択し、［選択した施設で検索］ボタンを押してください。</p>
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+            <h3>検索結果　15件</h3>
+
+            <div class="box_order">
+
+                <p class="txt_title result">
+                    検索条件：利用目的で検索＞集会＞コンサート・発表会
+                </p>
+
+                <div class="bg_green box_sort">
+                    <fieldset>
+                        <legend class="txt_title">設備で絞り込む</legend>
+                        <ul class="inner sort_facility">
+                            
+                            
+                                
+                                
+                                
+                                    <li><input type="checkbox" id="facility01" onclick="searchEquipment();" name="" tabindex="-1" />
+                                        <label for="facility01" tabindex="0">誘導鈴</label></li>
+                                
+                            
+                                
+                                
+                                
+                                    <li><input type="checkbox" id="facility02" onclick="searchEquipment();" name="" tabindex="-1" />
+                                        <label for="facility02" tabindex="0">スロープ</label></li>
+                                
+                            
+                                
+                                
+                                
+                                    <li><input type="checkbox" id="facility03" onclick="searchEquipment();" name="" tabindex="-1" />
+                                        <label for="facility03" tabindex="0">車椅子使用者駐車場</label></li>
+                                
+                            
+                                
+                                
+                                
+                                    <li><input type="checkbox" id="facility04" onclick="searchEquipment();" name="" tabindex="-1" />
+                                        <label for="facility04" tabindex="0">車椅子対応トイレ</label></li>
+                                
+                            
+                                
+                                
+                                
+                                    <li><input type="checkbox" id="facility05" onclick="searchEquipment();" name="" tabindex="-1" />
+                                        <label for="facility05" tabindex="0">車椅子貸出し</label></li>
+                                
+                            
+                                
+                                
+                                
+                                    <li><input type="checkbox" id="facility06" onclick="searchEquipment();" name="" tabindex="-1" />
+                                        <label for="facility06" tabindex="0">駐車場</label></li>
+                                
+                            
+                                
+                                
+                                
+                                    <li><input type="checkbox" id="facility07" onclick="searchEquipment();" name="" tabindex="-1" />
+                                        <label for="facility07" tabindex="0">おむつ交換所</label></li>
+                                
+                            
+                                
+                                
+                                
+                                    <li><input type="checkbox" id="facility08" onclick="searchEquipment();" name="" tabindex="-1" />
+                                        <label for="facility08" tabindex="0">授乳室</label></li>
+                                
+                            
+                            
+                        </ul>
+                    </fieldset>
+                </div>
+                
+                
+                
+                    <div style="display:block;justify-content: space-around;margin-bottom:18px;">
+                        <button type="button" class="btn_sort" onclick="selectCheckMeisaiUniqKey('true');" style="margin-bottom:18px;">施設を全て選択する</button>
+                        <a href="javascript:void(0)" class="link back " onclick="selectCheckMeisaiUniqKey('false');">選択をリセットする</a>
+                    </div>
+                    <div class="inner_scroll">
+                        <table class="table_order" summary="照会する施設を選択するための表" id="multiShisetsuTable">
+                            <tbody>
+                                <tr>
+                                    <th>選択</th>
+                                    <th>会館<br />施設名</th>
+                                    <th>定員数</th>
+                                    <th>使用料</th>
+                                    <th>設備</th>
+                                </tr>
+                    
+                                
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="男女平等推進センター「エセナおおた」多目的ルームを選択">
+                                        <td><input type="checkbox" id="r_record0" name="checkMeisaiUniqKey" value="131113_001_15_16_01" tabindex="-1" title="男女平等推進センター「エセナおおた」多目的ルームを選択" /></td>
+                                        <td><span>男女平等推進センター「エセナおおた」</span><span>多目的ルーム</span></td>
+                                        <td nowrap>100名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_15_16_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="ライフコミュニティ西馬込特別研修室を選択">
+                                        <td><input type="checkbox" id="r_record1" name="checkMeisaiUniqKey" value="131113_001_16_07_01" tabindex="-1" title="ライフコミュニティ西馬込特別研修室を選択" /></td>
+                                        <td><span>ライフコミュニティ西馬込</span><span>特別研修室</span></td>
+                                        <td nowrap>90名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_16_07_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="大田文化の森ホールを選択">
+                                        <td><input type="checkbox" id="r_record2" name="checkMeisaiUniqKey" value="131113_001_17_12_01" tabindex="-1" title="大田文化の森ホールを選択" /></td>
+                                        <td><span>大田文化の森</span><span>ホール</span></td>
+                                        <td nowrap>259名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_17_12_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="大田文化の森多目的室を選択">
+                                        <td><input type="checkbox" id="r_record3" name="checkMeisaiUniqKey" value="131113_001_17_13_01" tabindex="-1" title="大田文化の森多目的室を選択" /></td>
+                                        <td><span>大田文化の森</span><span>多目的室</span></td>
+                                        <td nowrap>234名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_17_13_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="大田区民プラザ大ホールを選択">
+                                        <td><input type="checkbox" id="r_record4" name="checkMeisaiUniqKey" value="131113_001_18_13_01" tabindex="-1" title="大田区民プラザ大ホールを選択" /></td>
+                                        <td><span>大田区民プラザ</span><span>大ホール</span></td>
+                                        <td nowrap>509名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_18_13_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="大田区民プラザ小ホール（集会使用）を選択">
+                                        <td><input type="checkbox" id="r_record5" name="checkMeisaiUniqKey" value="131113_001_18_19_01" tabindex="-1" title="大田区民プラザ小ホール（集会使用）を選択" /></td>
+                                        <td><span>大田区民プラザ</span><span>小ホール（集会使用）</span></td>
+                                        <td nowrap>150名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_18_19_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="大田区民ホール・アプリコ大ホールを選択">
+                                        <td><input type="checkbox" id="r_record6" name="checkMeisaiUniqKey" value="131113_001_19_03_01" tabindex="-1" title="大田区民ホール・アプリコ大ホールを選択" /></td>
+                                        <td><span>大田区民ホール・アプリコ</span><span>大ホール</span></td>
+                                        <td nowrap>1,477名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_19_03_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="大田区民ホール・アプリコ小ホール（公演集会使用）を選択">
+                                        <td><input type="checkbox" id="r_record7" name="checkMeisaiUniqKey" value="131113_001_19_14_01" tabindex="-1" title="大田区民ホール・アプリコ小ホール（公演集会使用）を選択" /></td>
+                                        <td><span>大田区民ホール・アプリコ</span><span>小ホール（公演集会使用）</span></td>
+                                        <td nowrap>175名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_19_14_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="池上会館集会室を選択">
+                                        <td><input type="checkbox" id="r_record8" name="checkMeisaiUniqKey" value="131113_001_20_08_01" tabindex="-1" title="池上会館集会室を選択" /></td>
+                                        <td><span>池上会館</span><span>集会室</span></td>
+                                        <td nowrap>400名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_20_08_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="田園調布せせらぎ館第一多目的室Ａを選択">
+                                        <td><input type="checkbox" id="r_record9" name="checkMeisaiUniqKey" value="131113_001_33_01_01" tabindex="-1" title="田園調布せせらぎ館第一多目的室Ａを選択" /></td>
+                                        <td><span>田園調布せせらぎ館</span><span>第一多目的室Ａ</span></td>
+                                        <td nowrap>60名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_33_01_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="田園調布せせらぎ館第一多目的室Ｂを選択">
+                                        <td><input type="checkbox" id="r_record10" name="checkMeisaiUniqKey" value="131113_001_33_02_01" tabindex="-1" title="田園調布せせらぎ館第一多目的室Ｂを選択" /></td>
+                                        <td><span>田園調布せせらぎ館</span><span>第一多目的室Ｂ</span></td>
+                                        <td nowrap>60名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_33_02_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="大森スポーツセンター競技場を選択">
+                                        <td><input type="checkbox" id="r_record11" name="checkMeisaiUniqKey" value="131113_001_34_01_01" tabindex="-1" title="大森スポーツセンター競技場を選択" /></td>
+                                        <td><span>大森スポーツセンター</span><span>競技場</span></td>
+                                        <td nowrap></td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_34_01_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="大森スポーツセンター小ホールを選択">
+                                        <td><input type="checkbox" id="r_record12" name="checkMeisaiUniqKey" value="131113_001_34_06_01" tabindex="-1" title="大森スポーツセンター小ホールを選択" /></td>
+                                        <td><span>大森スポーツセンター</span><span>小ホール</span></td>
+                                        <td nowrap>96名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_34_06_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="新蒲田区民活動施設多目的室（大）を選択">
+                                        <td><input type="checkbox" id="r_record13" name="checkMeisaiUniqKey" value="131113_001_67_01_01" tabindex="-1" title="新蒲田区民活動施設多目的室（大）を選択" /></td>
+                                        <td><span>新蒲田区民活動施設</span><span>多目的室（大）</span></td>
+                                        <td nowrap>450名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_67_01_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                                
+                                
+                                    <tr class="btn_table" tabindex="0" title="大森北区民活動施設多目的室（大）を選択">
+                                        <td><input type="checkbox" id="r_record14" name="checkMeisaiUniqKey" value="131113_001_72_01_01" tabindex="-1" title="大森北区民活動施設多目的室（大）を選択" /></td>
+                                        <td><span>大森北区民活動施設</span><span>多目的室（大）</span></td>
+                                        <td nowrap>430名</td>
+                                        <td nowrap>－</td>
+                                        <td style="min-width:58px;">
+                                            
+                                            <div class="box_sortitems">
+                                                <ul id="equipment131113_001_72_01_01" class="inner sort_facility">
+                                                </ul>
+                                            </div>
+                                            </td>
+                                    </tr>
+                                    
+                                
+                            
+                            <tr  id="searchEquipnotFound"><td colspan="5">
+                                <div class="dataNothing">
+                                    該当する施設がありません。
+                                </div>
+                            </td></tr>
+                        </table>
+                    </div>
+    
+                    
+                <div class="box_btn reconfirmation">
+                    <button type="button" class="btn_orange" onclick="javascript:isSubmitDataSet('Enter');return false;" id="submitbutton">選択した施設で検索</button>
+                    <a href="javascript:void(0)" class="link back" onclick="isNextFuncCodeSet('TopPageYoyaku')">検索条件を再設定する</a>
+                </div>
+                
+                
+    
+            </div>
+        </div>
+        <!-- /container -->
+    </main>
+    <a href="#" id="page_top" onclick="setJumpFocus('pageTopId');"><img src='/eshisetsu/img/std/common/icn_tri_w_up.png' alt="ページトップへ戻る" /></a>
+    <a href="#" id="page_bottom" onclick="silideAnimateById('submitbutton');"><img src='/eshisetsu/img/std/common/icn_tri_w_down.png' alt="ページの最後へ" /></a>
+
+    <!--footer/-->
+    
+	<footer>
+		
+		<p class="logo">
+			<a href="#" title="大田区公共施設利用システム（うぐいすネット）" tabindex="0">
+			<img src='/eshisetsu/img/std/common/logo_footer.png' alt="大田区公共施設利用システム（うぐいすネット）" />
+			</a>
+		</p>
+		<p class="copy" lang="en" xml:lang="en">Copyrightc All Rights Reserved.</p>
+	</footer>
+    <!--/footer-->
+    </form>
+
+<script src="/eshisetsu/js/menu.js"></script> <!-- ◆追加スクリプト◆ --> 
+ 
+</body>
+</html>
