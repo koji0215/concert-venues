@@ -2158,5 +2158,508 @@
     "description": "六郷エリアの地域センター。",
     "createdAt": "2026-04-19T00:00:00Z",
     "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-ebara-2",
+    "name": "品川区立荏原文化センター 第4講習室",
+    "address": "東京都品川区中延1-9-15",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "荏原中延駅",
+    "stationWalkMinutes": 4,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/",
+    "description": "荏原文化センター内の講習室。詳細スペックは要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-ebara-3",
+    "name": "品川区立荏原文化センター レクホール",
+    "address": "東京都品川区中延1-9-15",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "荏原中延駅",
+    "stationWalkMinutes": 4,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/",
+    "description": "荏原文化センター内のレクリエーション向けホール。詳細は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-togoshidai-1",
+    "name": "品川区立戸越台中学校 音楽室",
+    "address": "東京都品川区戸越1-15-23",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "戸越駅",
+    "stationWalkMinutes": 2,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "学校施設開放枠の料金・定員は要確認",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://school.cts.ne.jp/togoshidai-j/",
+    "description": "手書きデータ記載の学校音楽室。利用条件は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-ebarahiratsuka-1",
+    "name": "品川区立荏原平塚学園 音楽室（5階)",
+    "address": "東京都品川区平塚3-16-26",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "戸越銀座駅",
+    "stationWalkMinutes": 5,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "学校施設開放枠の料金・定員は要確認",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://school.cts.ne.jp/ebahi-g/",
+    "description": "手書きデータ記載の学校音楽室。利用条件は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-squareebara-1",
+    "name": "スクエア荏原 ひらつかホール",
+    "address": "東京都品川区荏原4-5-28",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "武蔵小山駅",
+    "stationWalkMinutes": 10,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/squaree/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/squaree/",
+    "description": "スクエア荏原のホール。詳細スペックは要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-squareebara-2",
+    "name": "スクエア荏原 第1スタジオ",
+    "address": "東京都品川区荏原4-5-28",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "武蔵小山駅",
+    "stationWalkMinutes": 10,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/squaree/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/squaree/",
+    "description": "スクエア荏原のスタジオ。詳細スペックは要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-squareebara-3",
+    "name": "スクエア荏原 第2スタジオ",
+    "address": "東京都品川区荏原4-5-28",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "武蔵小山駅",
+    "stationWalkMinutes": 10,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/squaree/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/squaree/",
+    "description": "スクエア荏原のスタジオ。詳細スペックは要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-squareebara-4",
+    "name": "スクエア荏原 第3スタジオ",
+    "address": "東京都品川区荏原4-5-28",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "武蔵小山駅",
+    "stationWalkMinutes": 10,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/squaree/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/squaree/",
+    "description": "スクエア荏原のスタジオ。詳細スペックは要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-yamanaka-1",
+    "name": "品川区立山中小学校 ランチルーム",
+    "address": "東京都品川区大崎3-12-22",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "戸越駅",
+    "stationWalkMinutes": 10,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "学校施設開放枠の料金・定員は要確認",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://school.cts.ne.jp/yamanaka-e/",
+    "description": "手書きデータ記載の学校施設。利用条件は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-yamanaka-2",
+    "name": "品川区立山中小学校 わくわくランド",
+    "address": "東京都品川区大崎3-12-22",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "戸越駅",
+    "stationWalkMinutes": 10,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "学校施設開放枠の料金・定員は要確認",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://school.cts.ne.jp/yamanaka-e/",
+    "description": "手書きデータ記載の学校施設。利用条件は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-kumin-3",
+    "name": "品川区立総合区民会館 きゅりあん 音楽スタジオ",
+    "address": "東京都品川区東大井5-18-1",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "大井町駅",
+    "stationWalkMinutes": 1,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/",
+    "description": "きゅりあん内の音楽スタジオ。詳細スペックは要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-kumin-4",
+    "name": "品川区立総合区民会館 きゅりあん リハーサル室",
+    "address": "東京都品川区東大井5-18-1",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "大井町駅",
+    "stationWalkMinutes": 1,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/",
+    "description": "きゅりあん内のリハーサル室。詳細スペックは要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-gotanda-1",
+    "name": "品川区立五反田文化センター 音楽ホール",
+    "address": "東京都品川区西五反田6-5-1",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "不動前駅",
+    "stationWalkMinutes": 7,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/",
+    "description": "五反田文化センターの音楽ホール。詳細スペックは要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-gotanda-2",
+    "name": "品川区立五反田文化センター 音楽ホール（舞台のみ）",
+    "address": "東京都品川区西五反田6-5-1",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "不動前駅",
+    "stationWalkMinutes": 7,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "reservationUrl": "https://www.shinagawa-culture.or.jp/",
+    "officialUrl": "https://www.shinagawa-culture.or.jp/",
+    "description": "五反田文化センター音楽ホールの舞台利用枠。詳細は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-kenko-1",
+    "name": "品川健康センターホール ホール<全面>",
+    "address": "東京都品川区北品川3-11-22",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "新馬場駅",
+    "stationWalkMinutes": 3,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.city.shinagawa.tokyo.jp/",
+    "description": "健康センター内ホールの全面利用枠。詳細は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-kenko-2",
+    "name": "品川健康センターホール ホール<半面>",
+    "address": "東京都品川区北品川3-11-22",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "新馬場駅",
+    "stationWalkMinutes": 3,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.city.shinagawa.tokyo.jp/",
+    "description": "健康センター内ホールの半面利用枠。詳細は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "shinagawa-chusho-1",
+    "name": "品川区立中小企業センター 音楽室",
+    "address": "東京都品川区西品川1-28-3",
+    "prefecture": "東京都",
+    "city": "品川区",
+    "ward": "品川区",
+    "station": "下神明駅",
+    "stationWalkMinutes": 2,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "料金・定員は要確認（手書きデータに基づく）",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.city.shinagawa.tokyo.jp/",
+    "description": "中小企業センター内の音楽室。詳細スペックは要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
   }
 ]
