@@ -2158,5 +2158,382 @@
     "description": "六郷エリアの地域センター。",
     "createdAt": "2026-04-19T00:00:00Z",
     "updatedAt": "2026-04-19T00:00:00Z"
+  },
+  {
+    "id": "ota-esena-1",
+    "name": "男女平等推進センター「エセナおおた」 多目的ルーム",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 100,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "男女平等推進センター「エセナおおた」 多目的ルーム。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-nishimagome-1",
+    "name": "ライフコミュニティ西馬込 特別研修室",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 90,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "ライフコミュニティ西馬込 特別研修室。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-bunkanomori-1",
+    "name": "大田文化の森 ホール",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 259,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "大田文化の森 ホール。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-bunkanomori-2",
+    "name": "大田文化の森 多目的室",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 234,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "大田文化の森 多目的室。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-kuminplaza-1",
+    "name": "大田区民プラザ 大ホール",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 509,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "大田区民プラザ 大ホール。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-kuminplaza-2",
+    "name": "大田区民プラザ 小ホール（集会使用）",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 150,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "大田区民プラザ 小ホール（集会使用）。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-ikegami-1",
+    "name": "池上会館 集会室",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 400,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "池上会館 集会室。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-seseragi-1",
+    "name": "田園調布せせらぎ館 第一多目的室Ａ",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 60,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "田園調布せせらぎ館 第一多目的室Ａ。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-seseragi-2",
+    "name": "田園調布せせらぎ館 第一多目的室Ｂ",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 60,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "田園調布せせらぎ館 第一多目的室Ｂ。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-omorisports-1",
+    "name": "大森スポーツセンター 競技場",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 50,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "大森スポーツセンター 競技場。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-omorisports-2",
+    "name": "大森スポーツセンター 小ホール",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 96,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": false
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "大森スポーツセンター 小ホール。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-shinkamata-1",
+    "name": "新蒲田区民活動施設 多目的室（大）",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 450,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "新蒲田区民活動施設 多目的室（大）。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
+  },
+  {
+    "id": "ota-omorikita-1",
+    "name": "大森北区民活動施設 多目的室（大）",
+    "address": "住所未確認",
+    "prefecture": "東京都",
+    "city": "大田区",
+    "ward": "大田区",
+    "station": "未確認",
+    "stationWalkMinutes": 10,
+    "capacity": 430,
+    "price": 10000,
+    "priceNote": "公共施設予約システムの一覧では使用料が「－」表記。住所詳細・最寄駅は要確認。",
+    "facilities": {
+      "piano": "none",
+      "soundSystem": false,
+      "lighting": true,
+      "airConditioning": true,
+      "parking": true
+    },
+    "conditions": {
+      "residentOnly": false,
+      "residentDiscount": true,
+      "advanceBookingDays": 90
+    },
+    "officialUrl": "https://www.pa-reserve.jp/eap-rj/rsv_rj/core_i/init.asp?KLCD=131113&SBT=1",
+    "description": "大森北区民活動施設 多目的室（大）。コンサート・発表会用途での利用候補。住所・最寄駅・料金・ピアノ/音響情報は要確認。",
+    "createdAt": "2026-05-30T00:00:00Z",
+    "updatedAt": "2026-05-30T00:00:00Z"
   }
 ]
